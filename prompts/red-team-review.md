@@ -1,4 +1,4 @@
-# Adversarial review — one model attacks another's work
+# Adversarial review, one model attacks another's work
 
 **Goal:** stop a model from validating its own output. The author model
 produces; a *different* model is told to break it.
@@ -15,14 +15,14 @@ produces; a *different* model is told to break it.
 Here is the <code / design / plan> I just produced:
 <paste or reference files>
 
-Step 1 — Use challenge to argue the strongest case that this is WRONG,
+Step 1, Use challenge to argue the strongest case that this is WRONG,
 incomplete, or unsafe. Do not soften. List concrete failure modes.
 
-Step 2 — Use clink with gemini codereviewer to independently review the
+Step 2, Use clink with gemini codereviewer to independently review the
 same artifact for the issues challenge did NOT raise. Fresh eyes, no
 access to step 1's reasoning.
 
-Step 3 — Give me the union of real issues, ranked by severity, and mark
+Step 3, Give me the union of real issues, ranked by severity, and mark
 which ones both passes agreed on (high confidence) vs. only one raised.
 ```
 

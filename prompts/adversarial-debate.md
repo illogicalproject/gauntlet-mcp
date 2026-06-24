@@ -1,4 +1,4 @@
-# Cross-model debate — iterate to a stronger answer
+# Cross-model debate, iterate to a stronger answer
 
 **Goal:** use disagreement between models as a refinement engine. Propose,
 critique, synthesize, repeat until objections stop being novel.

@@ -1,10 +1,17 @@
-# Multi-Model Red-Team Kit
+# Gauntlet
 
-**Red-team and compare LLMs against each other — Claude, Gemini, GPT, Grok, local models — from inside the CLI you already use.**
+> _Make every answer run the gauntlet._
 
-This is an opinionated configuration layer on top of [PAL MCP](https://github.com/BeehiveInnovations/pal-mcp-server) (the open-source Provider Abstraction Layer, formerly Zen MCP). PAL does the hard part: it exposes many model providers through one MCP server. This kit adds the part PAL doesn't ship — a ready-to-run setup and a prompt playbook for **adversarial review and head-to-head comparison** across models.
+**Red-team and compare LLMs (Claude, Gemini, GPT, Grok, local models) against each other, from inside the CLI you already use.** An answer that survives attacks from three different model families is sturdier than one any single model is happy with.
 
-> **What this is / isn't.** This repo does **not** contain or fork the PAL server code. It's a thin layer — config presets, an installer that pulls upstream PAL, and a documented workflow. All credit for the server itself goes to the PAL MCP maintainers ([BeehiveInnovations](https://github.com/BeehiveInnovations/pal-mcp-server), Apache-2.0). See [NOTICE](./NOTICE).
+<!-- DEMO: replace the line below with your recording once captured. See docs/recording-a-demo.md -->
+<p align="center">
+  <img src="docs/media/demo.gif" alt="Gauntlet running a cross-model red-team review" width="760">
+</p>
+
+This is an opinionated configuration layer on top of [PAL MCP](https://github.com/BeehiveInnovations/pal-mcp-server) (the open-source Provider Abstraction Layer, formerly Zen MCP). PAL does the hard part: it exposes many model providers through one MCP server. This kit adds the part PAL doesn't ship, a ready-to-run setup and a prompt playbook for **adversarial review and head-to-head comparison** across models.
+
+> **What this is / isn't.** This repo does **not** contain or fork the PAL server code. It's a thin layer, config presets, an installer that pulls upstream PAL, and a documented workflow. All credit for the server itself goes to the PAL MCP maintainers ([BeehiveInnovations](https://github.com/BeehiveInnovations/pal-mcp-server), Apache-2.0). See [NOTICE](./NOTICE).
 
 ---
 
@@ -46,10 +53,10 @@ You drive everything from your existing CLI. PAL routes each sub-request to the 
 
 ```bash
 # 1. Clone this kit
-git clone https://github.com/<your-username>/multi-model-redteam-kit.git
-cd multi-model-redteam-kit
+git clone https://github.com/<your-username>/gauntlet-mcp.git
+cd gauntlet-mcp
 
-# 2. Run the installer — clones upstream PAL and wires in the red-team config
+# 2. Run the installer, clones upstream PAL and wires in the red-team config
 ./install.sh
 
 # 3. Add your API keys
@@ -71,28 +78,28 @@ Full provider/key reference: [`.env.example`](./.env.example) and upstream [PAL 
 
 Each pattern below has a full prompt template in [`prompts/`](./prompts). The short version:
 
-### 1. Adversarial review — one model attacks another's work
+### 1. Adversarial review, one model attacks another's work
 ```
 Use challenge to pressure-test the auth refactor I just wrote.
 Then use clink with gemini codereviewer to find what challenge missed.
 ```
 The `challenge` tool forces a critical stance instead of agreeable validation. Pairing it with a *different* model via `clink` means a second architecture is doing the attacking. → [`prompts/red-team-review.md`](./prompts/red-team-review.md)
 
-### 2. Consensus — make models commit and defend
+### 2. Consensus, make models commit and defend
 ```
 Use consensus with gemini-pro (for) and gpt-5 (against) to decide:
 should we ship the new caching layer this sprint?
 ```
 `consensus` assigns stances and collects defended positions, so you read a real debate, not three hedged paragraphs. → [`prompts/model-consensus.md`](./prompts/model-consensus.md)
 
-### 3. Comparison matrix — same prompt, every model, side by side
+### 3. Comparison matrix, same prompt, every model, side by side
 ```
 Run this prompt through gemini-pro, gpt-5, and opus, and build a
 comparison matrix: correctness, reasoning depth, what each one missed.
 ```
 → [`prompts/comparison-matrix.md`](./prompts/comparison-matrix.md)
 
-### 4. Cross-model debate — iterate to a stronger answer
+### 4. Cross-model debate, iterate to a stronger answer
 ```
 Have gemini propose, gpt critique, then claude synthesize.
 Loop until no new objections survive.
@@ -124,6 +131,12 @@ If someone hands you this and you're not deep in CLIs: read [`docs/red-teaming.m
 
 ---
 
+## Contributing
+
+New prompt patterns, config presets, and installer improvements are welcome, see [CONTRIBUTING.md](./CONTRIBUTING.md). Changes to the PAL server itself go [upstream](https://github.com/BeehiveInnovations/pal-mcp-server), not here. Want to swap in your own demo recording? See [`docs/recording-a-demo.md`](./docs/recording-a-demo.md).
+
+---
+
 ## Credits & license
 
-Built on **[PAL MCP](https://github.com/BeehiveInnovations/pal-mcp-server)** by BeehiveInnovations, licensed Apache-2.0. This kit (the configuration, installer, and playbook) is also Apache-2.0 — see [LICENSE](./LICENSE) and [NOTICE](./NOTICE). The PAL server is **not** redistributed here; the installer fetches it from the official source.
+Built on **[PAL MCP](https://github.com/BeehiveInnovations/pal-mcp-server)** by BeehiveInnovations, licensed Apache-2.0. This kit (the configuration, installer, and playbook) is also Apache-2.0, see [LICENSE](./LICENSE) and [NOTICE](./NOTICE). The PAL server is **not** redistributed here; the installer fetches it from the official source.

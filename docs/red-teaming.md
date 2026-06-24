@@ -18,7 +18,7 @@ independently arriving at the same concern is strong signal.
 **Disagreement = look closer, don't average.** If only one model raises an
 issue, that's not noise to ignore. It's either a real edge case the others
 missed, or a quirk of that one model. Either way it deserves a human look.
-Do not "average" the models into a mushy middle — read *why* they split.
+Do not "average" the models into a mushy middle, read *why* they split.
 
 **Silence is not safety.** If no model objects, that means nothing
 obvious is wrong to those models. It is not a proof of correctness. Big,
@@ -31,7 +31,7 @@ novel, or domain-specific risks can sail past all of them.
 
 ## What it is not
 - Not a substitute for human judgment, testing, or a domain expert.
-- Not deterministic — models can answer differently run to run. For
+- Not deterministic, models can answer differently run to run. For
   important calls, run it more than once.
 
 ## Credit

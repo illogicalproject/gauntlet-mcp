@@ -4,7 +4,7 @@ After `./install.sh` finishes, register the PAL server with Claude Code.
 Replace `ABSOLUTE_PATH` with the full path to this repo.
 
 ```bash
-claude mcp add pal-redteam \
+claude mcp add gauntlet \
   "ABSOLUTE_PATH/pal-mcp-server/.pal_venv/bin/python" \
   "ABSOLUTE_PATH/pal-mcp-server/server.py"
 ```
@@ -12,7 +12,7 @@ claude mcp add pal-redteam \
 Verify it loaded:
 
 ```bash
-claude mcp list          # should show pal-redteam
+claude mcp list          # should show gauntlet
 ```
 
 Then, inside a Claude Code session, the red-team tools are available as

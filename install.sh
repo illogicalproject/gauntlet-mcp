@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Multi-Model Red-Team Kit installer.
+# Gauntlet installer.
 # Clones the upstream PAL MCP server (NOT vendored here) and wires in this
 # kit's red-team config. Re-runnable: skips the clone if it already exists.
 set -euo pipefail
@@ -8,7 +8,7 @@ PAL_REPO="https://github.com/BeehiveInnovations/pal-mcp-server.git"
 KIT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PAL_DIR="$KIT_DIR/pal-mcp-server"
 
-echo "==> Multi-Model Red-Team Kit installer"
+echo "==> Gauntlet installer"
 
 if [ ! -d "$PAL_DIR/.git" ]; then
   echo "==> Cloning upstream PAL MCP server..."
@@ -21,7 +21,7 @@ fi
 echo "==> Running upstream PAL setup (creates .pal_venv, installs deps)..."
 if [ -x "$PAL_DIR/run-server.sh" ]; then
   ( cd "$PAL_DIR" && ./run-server.sh ) || {
-    echo "    Upstream setup needs attention — see its output above."
+    echo "    Upstream setup needs attention, see its output above."
   }
 fi
 

@@ -1,4 +1,4 @@
-# Consensus — make models commit and defend a position
+# Consensus, make models commit and defend a position
 
 **Goal:** turn a vague "what should we do" into a defended debate, so you
 see the actual trade-offs instead of three hedged paragraphs.
@@ -28,5 +28,5 @@ would change the answer.
 
 ## Reading the result
 The agreement is rarely the interesting part. Look at **where they split
-and why** — that's the real decision surface. If all models converge with
+and why**, that's the real decision surface. If all models converge with
 high confidence, the call is probably easy and you were overthinking it.

@@ -1,18 +1,19 @@
-# VHS tape for the Gauntlet demo. Run: vhs docs/media/demo.tape
+# VHS tape for the Gauntlet demo. Render with: vhs docs/media/demo.tape
+# Produces docs/media/demo.gif from the staged transcript in demo-run.sh.
+# Docs: https://github.com/charmbracelet/vhs
+
 Output docs/media/demo.gif
+
 Set FontSize 18
-Set Width 1200
-Set Height 700
+Set Width 1100
+Set Height 720
+Set Padding 24
 Set Theme "Catppuccin Mocha"
-Set TypingSpeed 60ms
+Set TypingSpeed 55ms
 Set PlaybackSpeed 1.0
 
-Type "# Gauntlet: make two model families attack the same code"
+# Type the command, then let the staged session play out and record it.
+Type "bash docs/media/demo-run.sh"
+Sleep 400ms
 Enter
-Sleep 800ms
-Type "claude"
-Enter
-Sleep 1.5s
-Type "Use challenge to break the auth refactor I just wrote, then clink with gemini codereviewer to find what challenge missed. Rank the union by severity."
-Enter
-Sleep 6s
+Sleep 16s

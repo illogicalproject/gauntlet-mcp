@@ -13,8 +13,13 @@ brew install vhs            # macOS
 vhs docs/media/demo.tape    # outputs docs/media/demo.gif
 ```
 
-A starter tape is provided at `docs/media/demo.tape`, edit the typed
-commands to match your setup, then run the command above.
+`docs/media/demo.tape` runs `docs/media/demo-run.sh`, a **staged
+re-enactment** of a Gauntlet session: it prints a representative
+`challenge` + `clink` transcript with realistic pacing so the GIF is fast,
+deterministic, and needs no API keys. It's an honest depiction of how the
+tool behaves, not a live capture (a real multi-model run is slow and dumps
+far too much scrolling text for a clean loop). Edit `demo-run.sh` to change
+the findings, or `demo.tape` to change size/theme/speed.
 
 ## Option B: asciinema + agg (record a real session)
 ```bash

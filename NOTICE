@@ -1,0 +1,15 @@
+Multi-Model Red-Team Kit
+Copyright 2026 Brian Fenn / illogicalproject
+
+This product is a configuration and documentation layer built on top of:
+
+  PAL MCP (Provider Abstraction Layer), formerly Zen MCP
+  Copyright BeehiveInnovations and contributors
+  https://github.com/BeehiveInnovations/pal-mcp-server
+  Licensed under the Apache License, Version 2.0
+
+The PAL MCP server code is NOT redistributed in this repository. The
+installer (install.sh) fetches it directly from the upstream source above.
+All credit for the server itself belongs to the PAL MCP maintainers and
+contributors. This kit adds only configuration presets, an installer, and
+a red-team / model-comparison prompt playbook.

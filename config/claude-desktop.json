@@ -1,0 +1,11 @@
+{
+  "_comment": "Claude Desktop config for the Multi-Model Red-Team Kit.",
+  "_comment2": "Merge mcpServers into your existing claude_desktop_config.json.",
+  "_comment3": "Replace ABSOLUTE_PATH with the full path to the pal-mcp-server folder created by install.sh.",
+  "mcpServers": {
+    "pal-redteam": {
+      "command": "ABSOLUTE_PATH/pal-mcp-server/.pal_venv/bin/python",
+      "args": ["ABSOLUTE_PATH/pal-mcp-server/server.py"]
+    }
+  }
+}

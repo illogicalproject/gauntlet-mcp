@@ -1,0 +1,10 @@
+# Never commit real keys or local server checkout
+.env
+*.env
+!.env.example
+pal-mcp-server/
+.pal_venv/
+__pycache__/
+*.pyc
+.DS_Store
+logs/

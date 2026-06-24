@@ -70,7 +70,7 @@ Then point your MCP client at the server using a template in [`config/`](./confi
 - **Claude Desktop / Claude Code** → [`config/claude-desktop.json`](./config/claude-desktop.json)
 - **Claude Code (CLI)** → [`config/claude-code.md`](./config/claude-code.md)
 
-Full provider/key reference: [`.env.example`](./.env.example) and upstream [PAL configuration docs](https://github.com/BeehiveInnovations/pal-mcp-server/blob/main/docs/configuration.md).
+**Providers work out of the box.** Gemini, OpenAI, Anthropic, Grok, Azure, OpenRouter, and local models are all supported by the server underneath. You don't wire anything up, you add a key and that model becomes callable by name. Run at least two providers from different vendors so the models checking each other have different blind spots. Full setup and a plug-in path for new providers: [`config/providers.md`](./config/providers.md). Quick key reference: [`.env.example`](./.env.example).
 
 ---
 
